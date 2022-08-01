@@ -1,3 +1,4 @@
+import axios from 'axios'
 import type { NextPage } from 'next'
 import styles from '../styles/Home.module.css'
 
@@ -7,7 +8,10 @@ const Home: NextPage = (props:any) => {
       <h1>Pokedex</h1>
       <ul>
         {props.pokemonInfo.map((pokemon:any, id:number) => {
-          return <li key={id + 1}>{pokemon.name}</li>
+          return <li className={styles.pokeItem} key={id + 1}>
+            <img className={styles.pokeImage} src={pokemon.image} alt={pokemon.name}/>
+            <span className={styles.pokeName}>{pokemon.name.toUpperCase()}</span>
+          </li>
         })}
       </ul>
     </div>
@@ -17,11 +21,11 @@ const Home: NextPage = (props:any) => {
 
 export async function getStaticProps(context:any) {
   try {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20`)
-    const { results } = await res.json()
-    const pokemonInfo = results.map((pokemon:String, index:number) => {
-      const id:number = index + 1
-      return {...pokemon}
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20`)
+    const pokemonInfo = res.data.results.map((pokemon:any, index:number) => {  
+      const id:number = (index + 1)
+      const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+      return {...pokemon, image}
     })
     return {
       props: { pokemonInfo }
