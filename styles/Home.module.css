@@ -29,7 +29,6 @@
 }
 
 .pokeItem {
-  
   position: relative;
   display: flex;
   flex-direction: column;
@@ -38,6 +37,7 @@
   background-color: #DEDEDE;
   padding: 2rem;
   border-radius: 2rem;
+  cursor: pointer;
 }
 
 .pokeID {
