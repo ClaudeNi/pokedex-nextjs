@@ -9,9 +9,9 @@ const Home: NextPage = (props:any) => {
       <h1 className={styles.title}>Pokedex</h1>
       <div className={styles.pokedex}>
         {props.pokemonInfo.map((pokemon:any) => {
-            return <div className={styles.pokedexCol}>
+            return <div className={styles.pokedexCol} key={pokemon.id}>
               <Link href={`/pokemon?id=${pokemon.id}`}>
-                  <div className={styles.pokeItem} key={pokemon.id}>
+                  <div className={styles.pokeItem}>
                       <span className={styles.pokeID}>#{pokemon.id}</span>
                       <img className={styles.pokeImage} src={pokemon.image} alt={pokemon.name}/>
                       <span className={styles.pokeName}>{pokemon.name.toUpperCase()}</span>
@@ -25,7 +25,7 @@ const Home: NextPage = (props:any) => {
   )
 }
 
-export async function getStaticProps(context:any) {
+export async function getStaticProps() {
   try {
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151`)
     const pokemonInfo = res.data.results.map((pokemon:any, index:number) => {  

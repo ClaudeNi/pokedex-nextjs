@@ -1,16 +1,27 @@
+import axios from "axios";
 
 
 export default function pokemon({ pokemon }:any) {
+    const showTypes = () => {
+        return pokemon.types.map((type:any,i:number) => {
+            return <li key={i}>{type.type.name}</li>
+        })
+    }
+
     return <div>
-        <img src={pokemon.image} alt={pokemon.name} /> {pokemon.name}
+        <span>{pokemon.name}</span>
+        <img src={pokemon.image} alt={pokemon.name} />
+        <ul>
+            {showTypes()}
+        </ul>
     </div>
 }
 
 export async function getServerSideProps({query}:any) {
     const id = query.id
     try {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        const pokemon = await res.json()
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        const pokemon = res.data
 
         const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
         pokemon.image = image
