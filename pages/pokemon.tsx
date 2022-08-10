@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import styles from '../styles/Pokemon.module.css'
 
 export default function pokemon({ pokemon }:any) {
     const showTypes = () => {
@@ -8,12 +8,16 @@ export default function pokemon({ pokemon }:any) {
         })
     }
 
-    return <div>
-        <span>{pokemon.name}</span>
-        <img src={pokemon.image} alt={pokemon.name} />
-        <ul>
-            {showTypes()}
-        </ul>
+    return <div className={styles.pokePage}>
+        <div className={styles.upperHalf}>
+            <span className={styles.pokeName}>{pokemon.name}</span>
+            <img src={pokemon.image} alt={pokemon.name} className={styles.pokeImg}/>
+        </div>
+        <div className={styles.lowerHalf}>
+            <ul>
+                {showTypes()}
+            </ul>
+        </div>
     </div>
 }
 
