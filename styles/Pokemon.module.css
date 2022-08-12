@@ -8,6 +8,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding-bottom: 3rem;
 }
 
 .pokeName {
@@ -21,9 +23,14 @@
 .lowerHalf {
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     z-index: 2rem;
     top: -50px;
+    padding-top: 2rem;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 5rem 5rem 0 0;
 }
 
 .fire {
