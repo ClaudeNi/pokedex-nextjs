@@ -12,8 +12,14 @@
     padding-bottom: 3rem;
 }
 
+.pokeID {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
 .pokeName {
     font-size: 3rem;
+    font-weight: 700;
 }
 
 .pokeImg {
