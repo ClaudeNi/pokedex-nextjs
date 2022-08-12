@@ -7,9 +7,9 @@ export default function pokemon({ pokemon }:any) {
             return <li key={i}>{type.type.name}</li>
         })
     }
-
+    
     return <div className={styles.pokePage}>
-        <div className={styles.upperHalf}>
+        <div className={`${styles.upperHalf} ${styles[pokemon.types[0].type.name]}`}>
             <span className={styles.pokeName}>{pokemon.name}</span>
             <img src={pokemon.image} alt={pokemon.name} className={styles.pokeImg}/>
         </div>
