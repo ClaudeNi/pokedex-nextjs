@@ -3,10 +3,9 @@ import { stringify } from "querystring";
 import styles from '../styles/Pokemon.module.css'
 
 export default function pokemon({ pokemon }:any) {
-    const showTypes = () => {
-        return pokemon.types.map((type:any,i:number) => {
-            return <li key={i} className={styles[type.type.name]}>{type.type.name}</li>
-        })
+    const capFirstLetter = (str:string) => {
+        let newStr:string = str.charAt(0).toUpperCase() + str.slice(1)
+        return newStr
     }
 
     const displayID = (id:number) => {
@@ -15,22 +14,23 @@ export default function pokemon({ pokemon }:any) {
         return idStr
     }
 
-    const displayName = (name:string) => {
-        let capName:string = name.charAt(0).toUpperCase() + name.slice(1)
-        return capName
+    const showTypes = () => {
+        return pokemon.types.map((type:any,i:number) => {
+            return <span key={i} className={`${styles[type.type.name]} ${styles.pokeType}`}>{capFirstLetter(type.type.name)}</span>
+        })
     }
     
     return <div className={styles.pokePage}>
         <div className={`${styles.upperHalf} ${styles[pokemon.types[0].type.name]}`}>
             <span className={styles.pokeID}>#{displayID(pokemon.id)}</span>
-            <span className={styles.pokeName}>{displayName(pokemon.name)}</span>
             <img src={pokemon.image} alt={pokemon.name} className={styles.pokeImg}/>
         </div>
         <div className={styles.lowerHalf}>
-            <ul>
-                <li>Types:</li>
+            <span className={styles.pokeName}>{capFirstLetter(pokemon.name)}</span>
+            <div className={styles.pokeTypeContainer}>
                 {showTypes()}
-            </ul>
+            </div>
+            
         </div>
     </div>
 }
