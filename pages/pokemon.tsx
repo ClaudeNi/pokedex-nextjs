@@ -1,4 +1,5 @@
 import axios from "axios";
+import { stringify } from "querystring";
 import styles from '../styles/Pokemon.module.css'
 
 export default function pokemon({ pokemon }:any) {
@@ -7,10 +8,16 @@ export default function pokemon({ pokemon }:any) {
             return <li key={i} className={styles[type.type.name]}>{type.type.name}</li>
         })
     }
+
+    const displayID = (id:any) => {
+        let idStr:any = "00" + id.toString()
+        idStr = idStr.slice(-3)
+        return idStr
+    }
     
     return <div className={styles.pokePage}>
         <div className={`${styles.upperHalf} ${styles[pokemon.types[0].type.name]}`}>
-            <span className={styles.pokeID}>#{pokemon.id}</span>
+            <span className={styles.pokeID}>#{displayID(pokemon.id)}</span>
             <span className={styles.pokeName}>{pokemon.name}</span>
             <img src={pokemon.image} alt={pokemon.name} className={styles.pokeImg}/>
         </div>
