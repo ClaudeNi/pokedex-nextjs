@@ -9,16 +9,21 @@ export default function pokemon({ pokemon }:any) {
         })
     }
 
-    const displayID = (id:any) => {
-        let idStr:any = "00" + id.toString()
+    const displayID = (id:number) => {
+        let idStr:string = "00" + id.toString()
         idStr = idStr.slice(-3)
         return idStr
+    }
+
+    const displayName = (name:string) => {
+        let capName:string = name.charAt(0).toUpperCase() + name.slice(1)
+        return capName
     }
     
     return <div className={styles.pokePage}>
         <div className={`${styles.upperHalf} ${styles[pokemon.types[0].type.name]}`}>
             <span className={styles.pokeID}>#{displayID(pokemon.id)}</span>
-            <span className={styles.pokeName}>{pokemon.name}</span>
+            <span className={styles.pokeName}>{displayName(pokemon.name)}</span>
             <img src={pokemon.image} alt={pokemon.name} className={styles.pokeImg}/>
         </div>
         <div className={styles.lowerHalf}>
