@@ -19,6 +19,7 @@ export default function pokemon({ pokemon }:any) {
             return <span key={i} className={`${styles[type.type.name]} ${styles.pokeType}`}>{capFirstLetter(type.type.name)}</span>
         })
     }
+    console.log(pokemon);
     
     return <div className={styles.pokePage}>
         <div className={`${styles.upperHalf} ${styles[pokemon.types[0].type.name]}`}>
@@ -27,10 +28,19 @@ export default function pokemon({ pokemon }:any) {
         </div>
         <div className={styles.lowerHalf}>
             <span className={styles.pokeName}>{capFirstLetter(pokemon.name)}</span>
-            <div className={styles.pokeTypeContainer}>
+            <div className={styles.flexContainer}>
                 {showTypes()}
             </div>
-            
+            <div className={styles.flexContainer}>
+                <div className={styles.pokeWeightHeightContainer}>
+                    <span className={styles.pokeWeightHeight}>{pokemon.weight / 10} KG</span>
+                    <span className={styles.pokeSubtitle}>Weight</span>
+                </div>
+                <div className={styles.pokeWeightHeightContainer}>
+                    <span className={styles.pokeWeightHeight}>{pokemon.height / 10} M</span>
+                    <span className={styles.pokeSubtitle}>Height</span>
+                </div>
+            </div>
         </div>
     </div>
 }
