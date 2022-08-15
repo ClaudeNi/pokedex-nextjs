@@ -84,6 +84,15 @@
     margin: 0.05rem 0 2rem 0;
 }
 
+.pokeStatLine {
+    display: flex;
+}
+
+.pokeStatName {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
 .normal {
     background: #a5a5a5;
 }

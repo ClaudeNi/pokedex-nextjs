@@ -19,6 +19,18 @@ export default function pokemon({ pokemon }:any) {
             return <span key={i} className={`${styles[type.type.name]} ${styles.pokeType}`}>{capFirstLetter(type.type.name)}</span>
         })
     }
+
+    const showStats = () => {
+        let stats:Array<String> = ["HP","ATK","DEF","SP. ATK","SP. DEF","SPD"]
+        return pokemon.stats.map((stat:any, i:number) => {
+            console.log(stat);
+            
+            return (<div key={i} className={styles.pokeStatLine}>
+                <span className={styles.pokeStatName}>{stats[i]}</span><div className={styles.pokeStat}></div>
+            </div>)
+        })
+    }
+
     console.log(pokemon);
     
     return <div className={styles.pokePage}>
@@ -40,6 +52,9 @@ export default function pokemon({ pokemon }:any) {
                     <span className={styles.pokeWeightHeight}>{pokemon.height / 10} M</span>
                     <span className={styles.pokeSubtitle}>Height</span>
                 </div>
+            </div>
+            <div className={styles.pokeStatsContainer}>
+                {showStats()}
             </div>
         </div>
     </div>
