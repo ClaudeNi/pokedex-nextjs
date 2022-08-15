@@ -115,6 +115,10 @@
     width: 50%;
 }
 
+.pokeStatBar[value] {
+    appearance: none;
+}
+
 .normal {
     background: #a5a5a5;
 }
