@@ -28,7 +28,7 @@ export default function pokemon({ pokemon }:any) {
         </div>
         <div className={styles.lowerHalf}>
             <span className={styles.pokeName}>{capFirstLetter(pokemon.name)}</span>
-            <div className={styles.flexContainer}>
+            <div className={styles.pokeTypeContainer}>
                 {showTypes()}
             </div>
             <div className={styles.flexContainer}>

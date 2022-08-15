@@ -4,6 +4,10 @@
     align-items: center;
     background-color: #1F1F1F;
     min-height: 100vh;
+
+    --imgWidth: 400px;
+    --overallWidth: 300px;
+    --WHWidth: 150px;
 }
 
 .flexContainer {
@@ -26,13 +30,15 @@
 }
 
 .pokeName {
+    min-width: var(--overallWidth);
+    text-align: center;
     color: #fff;
     font-size: 3rem;
     font-weight: 700;
 }
 
 .pokeImg {
-    width: 400px;
+    width: var(--imgWidth);
 }
 
 .lowerHalf {
@@ -40,11 +46,13 @@
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
-    width: 100%;
+    min-width: var(--overallWidth);
 }
 
 .pokeTypeContainer {
+    min-width: var(--overallWidth);
     display: flex;
+    justify-content: center;
 }
 
 .pokeType {
@@ -59,8 +67,9 @@
 .pokeWeightHeightContainer {
     display: flex;
     flex-direction: column;
-    margin: 0 2rem;
+    align-items: center;
     text-align: center;
+    min-width: var(--WHWidth);
 }
 
 .pokeWeightHeight {
