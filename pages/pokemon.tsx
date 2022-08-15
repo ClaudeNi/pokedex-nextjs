@@ -23,15 +23,12 @@ export default function pokemon({ pokemon }:any) {
     const showStats = () => {
         let stats:Array<String> = ["HP","ATK","DEF","SP. ATK","SP. DEF","SPD"]
         return pokemon.stats.map((stat:any, i:number) => {
-            console.log(stat);
-            
             return (<div key={i} className={styles.pokeStatLine}>
-                <span className={styles.pokeStatName}>{stats[i]}</span><div className={styles.pokeStat}></div>
+                <span className={styles.pokeStatName}>{stats[i]}</span>
+                <progress className={styles.pokeStatBar} max={300} value={stat["base_stat"]}></progress>
             </div>)
         })
     }
-
-    console.log(pokemon);
     
     return <div className={styles.pokePage}>
         <div className={`${styles.upperHalf} ${styles[pokemon.types[0].type.name]}`}>
@@ -54,6 +51,7 @@ export default function pokemon({ pokemon }:any) {
                 </div>
             </div>
             <div className={styles.pokeStatsContainer}>
+                <span className={styles.pokeTitle}>Base Stats:</span>
                 {showStats()}
             </div>
         </div>

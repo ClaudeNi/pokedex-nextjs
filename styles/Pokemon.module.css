@@ -14,6 +14,12 @@
     display: flex;
 }
 
+.pokeTitle {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #fff;
+}
+
 .upperHalf {
     padding: 0.5rem;
     display: flex;
@@ -84,13 +90,29 @@
     margin: 0.05rem 0 2rem 0;
 }
 
-.pokeStatLine {
+.pokeStatsContainer {
+    min-width: var(--overallWidth);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokeStatLine {
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .pokeStatName {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: #fff;
+    width: 50%;
+    text-align: center;
+}
+
+.pokeStatBar {
+    width: 50%;
 }
 
 .normal {
