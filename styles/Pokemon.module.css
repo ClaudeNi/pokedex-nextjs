@@ -119,6 +119,30 @@
     appearance: none;
 }
 
+.pokeStatBar.hp::-webkit-progress-value {
+    background-color: #388D3E;
+}
+
+.pokeStatBar.atk::-webkit-progress-value {
+    background-color: #D63944;
+}
+
+.pokeStatBar.def::-webkit-progress-value {
+    background-color: #068EE8;
+}
+
+.pokeStatBar.spatk::-webkit-progress-value {
+    background-color: #B02327;
+}
+
+.pokeStatBar.spdef::-webkit-progress-value {
+    background-color: #2648DD;
+}
+
+.pokeStatBar.spd::-webkit-progress-value {
+    background-color: #8DB1C3;
+}
+
 .normal {
     background: #a5a5a5;
 }
