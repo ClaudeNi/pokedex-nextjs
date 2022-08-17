@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import styles from '../styles/Pokemon.module.css'
 
 export default function pokemon({ pokemon }:any) {
@@ -31,6 +32,9 @@ export default function pokemon({ pokemon }:any) {
     }
     
     return <div className={styles.pokePage}>
+        <Head>
+            <title>{capFirstLetter(pokemon.name)} #{displayID(pokemon.id)}</title>
+        </Head>
         <div className={`${styles.upperHalf} ${styles[pokemon.types[0].type.name]}`}>
             <span className={styles.pokeID}>#{displayID(pokemon.id)}</span>
             <img src={pokemon.image} alt={pokemon.name} className={styles.pokeImg}/>

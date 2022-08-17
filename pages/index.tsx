@@ -1,11 +1,15 @@
 import axios from 'axios'
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = (props:any) => {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>NextJS Pokedex</title>
+      </Head>
       <h1 className={styles.title}>Pokedex</h1>
       <div className={styles.pokedex}>
         {props.pokemonInfo.map((pokemon:any) => {
