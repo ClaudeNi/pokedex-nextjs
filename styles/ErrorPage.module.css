@@ -1,0 +1,40 @@
+.errorContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F1F1F;
+    flex-wrap: wrap;
+}
+
+.errorContainer .upperHalf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.errorContainer img {
+    width: 200px;
+    height: 200px;
+    margin: 0 1rem;
+}
+
+.errorContainer .title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 1rem;
+}
+
+.errorContainer .link {
+    color: #068EE8;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+
+.errorContainer .link:hover {
+    color: #43ccff;
+}

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { stringify } from "querystring";
 import styles from '../styles/Pokemon.module.css'
 
 export default function pokemon({ pokemon }:any) {
