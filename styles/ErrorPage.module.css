@@ -15,7 +15,7 @@
     flex-wrap: wrap;
 }
 
-.errorContainer img {
+.errorContainer .pokeImg {
     width: 200px;
     height: 200px;
     margin: 0 1rem;

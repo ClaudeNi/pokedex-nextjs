@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/ErrorPage.module.css'
+import pokeball from "../assets/pokeball.png"
 
 export default function errorPage() {
     return <div className={styles.errorContainer}>
@@ -8,7 +10,9 @@ export default function errorPage() {
             <title>404</title>
         </Head>
         <div className={styles.upperHalf}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/601px-Pokebola-pokeball-png-0.png" alt="pokeball"/>
+            <div className={styles.pokeImg}>
+                <Image src={pokeball} alt="pokeball" />
+            </div>
             <span className={styles.title}>404 page</span>
         </div>
         <Link href={"/"}>
