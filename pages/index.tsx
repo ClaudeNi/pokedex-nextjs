@@ -2,6 +2,7 @@ import axios from 'axios'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = (props:any) => {
@@ -17,10 +18,12 @@ const Home: NextPage = (props:any) => {
               <Link href={`/pokemon?id=${pokemon.id}`}>
                   <div className={styles.pokeItem}>
                       <span className={styles.pokeID}>#{pokemon.id}</span>
-                      <img className={styles.pokeImage} src={pokemon.image} alt={pokemon.name}/>
+                      <div className={styles.pokeImage}>
+                        <Image src={pokemon.image} alt={pokemon.name} width={"600px"} height={"600px"}/>
+                      </div>
                       <span className={styles.pokeName}>{pokemon.name.toUpperCase()}</span>
                   </div>
-                  </Link>
+                </Link>
               </div>
           })}
       </div>
