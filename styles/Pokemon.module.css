@@ -29,9 +29,31 @@
     border-radius: 0 0 5rem 5rem;
 }
 
+.pokeHeader {
+    min-width: var(--overallWidth);
+    display: flex;
+    justify-content: space-between;
+}
+
+.goBack {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.goBack:hover {
+    background-color: #ccc;
+}
+
 .pokeID {
     font-size: 1.8rem;
     font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem 0 1rem 1rem;
+    background-color: #28AAFD;
 }
 
 .pokeName {
