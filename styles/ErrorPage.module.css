@@ -26,6 +26,7 @@
     font-weight: 600;
     color: #fff;
     margin: 0 1rem;
+    text-align: center;
 }
 
 .errorContainer .link {
@@ -37,4 +38,11 @@
 
 .errorContainer .link:hover {
     color: #43ccff;
+}
+
+@media (max-width: 300px) {
+    .errorContainer .pokeImg {
+        width: 150px;
+        height: 150px;
+    }
 }
