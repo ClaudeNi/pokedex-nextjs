@@ -36,8 +36,8 @@
 }
 
 .goBack {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 700;
     padding: 0.2rem 1rem;
     border-radius: 1rem;
     background-color: #fff;
@@ -52,7 +52,7 @@
     font-size: 1.8rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 1rem 0 1rem 1rem;
+    border-radius: 1rem;
     background-color: #28AAFD;
 }
 
@@ -235,4 +235,33 @@
 
 .fairy {
     background: #f87ea7;
+}
+
+
+@media (max-width: 400px) {
+    .pokePage {
+        --imgWidth: 300px;
+        --overallWidth: 200px;
+        --WHWidth: 100px;
+    }
+}
+
+@media (max-width: 300px) {
+    .pokePage {
+        --imgWidth: 200px;
+        --overallWidth: 200px;
+        --WHWidth: 100px;
+    }
+
+    .pokeTitle {
+        font-size: 1.5rem;
+    }
+
+    .goBack {
+        font-size: 1.5rem;
+    }
+
+    .pokeID {
+        font-size: 1.5rem;
+    }
 }
